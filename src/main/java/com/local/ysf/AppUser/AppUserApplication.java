@@ -16,6 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 import com.local.ysf.AppUser.Entity.BookReaderRole;
 import com.local.ysf.AppUser.Entity.BookReaderUser;
@@ -45,6 +46,10 @@ public class AppUserApplication {
 		return new BCryptPasswordEncoder();
 	}
 	
+	@Bean
+	public ObjectMapper creatObjectMapper(){
+		return new ObjectMapper();
+	}
 
 	
 	//@PostConstruct
